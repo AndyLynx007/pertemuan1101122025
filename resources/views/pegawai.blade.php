@@ -23,6 +23,7 @@
     <button class="btn btn-primary mb-3" onclick="$('#formCard').slideToggle()">➕ Tambah Data</button>
 
     <button class="btn btn-danger mb-3" id="pdf">PDF</button>
+    <button class="btn btn-success mb-3" id="excel">Excel</button>
 
     <div class="card mb-4" id="formCard" style="display:none;">
         <div class="card-header bg-dark text-white fw-bold">Form Pegawai</div>
@@ -169,6 +170,10 @@
 
     $("#pdf").click(function(){
         window.location.href = '/generate_pdf'
+    });
+
+    $("#excel").click(function(){
+        window.location.href = '/generate_excel'
     });
 
 </script>

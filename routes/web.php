@@ -10,3 +10,4 @@ Route::post('/store', [PegawaiController::class,'store']);
 Route::get('/delete/{id}', [PegawaiController::class,'delete']);
 
 Route::get('/generate_pdf', [PegawaiController::class, "generate_pdf"]);
+Route::get('/generate_excel', [PegawaiController::class, "generate_excel"]);
