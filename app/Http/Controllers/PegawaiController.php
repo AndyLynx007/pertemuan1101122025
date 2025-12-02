@@ -7,7 +7,7 @@ use App\Models\Pegawai;
 use Illuminate\Support\Facades\Storage;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Maatwebsite\Excel\Facades\Excel;
-use App\Exports\UsersExport;
+use App\Exports\PegawaiExport;
 
 
 class PegawaiController extends Controller
@@ -66,12 +66,12 @@ class PegawaiController extends Controller
             'data' => Pegawai::GetAllData()
         ];
 
-        $pdf = Pdf::LoadView("pdf_pegawai", $data);
+        $pdf = Pdf::LoadView("export_pegawai", $data);
         
         return $pdf->stream("Pegawai.pdf");
     }
 
     public function generate_excel(){
-        return Excel::download(new UsersExport, 'Pegawai.xlsx');
+        return Excel::download(new PegawaiExport, 'Pegawai.xlsx');
     }
 }
